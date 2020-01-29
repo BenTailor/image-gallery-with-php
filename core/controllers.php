@@ -57,7 +57,7 @@ function homeController() {
     /**
     * $lastPage - az utolsó oldal sorszáma
     */
-$lastPage = $total % $size == 0 ? intdiv($total, $size) : intdiv($total, $size) + 1;
+    $lastPage = $total % $size == 0 ? intdiv($total, $size) : intdiv($total, $size) + 1;
 
  
     return [
@@ -68,7 +68,7 @@ $lastPage = $total % $size == 0 ? intdiv($total, $size) : intdiv($total, $size) 
             'total' => $total,
             'size' => $size,
             'page' => $page,
-            'lastpage' => $lastPage
+            'lastPage' => $lastPage
         ]
     ];
 }

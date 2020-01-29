@@ -152,7 +152,7 @@ function getImageById($connection, $id) {
  */
 function route($route, $callable, $method = "GET") {
     global $routes;
-    $route = "%^$route$%";
+    //$route = "%^$route$%";
     $routes[strtoupper($method)][$route] = $callable;
 }
 
@@ -167,6 +167,7 @@ function dispatch($actualRoute, $notFound) {
     $method = $_SERVER["REQUEST_METHOD"];   // POST GET PATH DELETE
     if (key_exists($method, $routes)) {
         foreach ($routes[$method] as $route => $callable) {
+            $route = "%^$route$%";
             if (preg_match($route, $actualRoute, $matches)) {
                 return $callable($matches);
             }
