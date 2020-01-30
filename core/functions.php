@@ -75,7 +75,7 @@ function logMessage($level, $message) {
 }
 
 function getConnection() {
-    global $config;
+    global $config;    
     $connection = mysqli_connect($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
     if (!$connection) {
         logMessage("ERROR", 'Failed to connection to MySQL: ' . mysqli_connect_error());
@@ -123,7 +123,7 @@ function getPhotosPaginated($connection, $size, $offset) {
 }
 
 /**
- * Egy képet a d vsisza azonotító alapján
+ * Egy képet ad vsisza azonotító alapján
  * @param [type] $connection
  * @param [integer] $id
  * @return void
@@ -175,6 +175,9 @@ function dispatch($actualRoute, $notFound) {
     }
     return $notFound();
 }
+
+
+
 
 
  

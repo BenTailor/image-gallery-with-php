@@ -42,9 +42,9 @@ function homeController() {
     $page = $_GET["page"] ?? 1;     // $page: oldalszám
  
     // $connection: Adatbázis kapcsolat
-    global $config;
-    $connection = getConnection($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
- 
+    //global $config;
+    //$connection = getConnection($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
+    $connection = getConnection();
     // $total: a képek számának meghatározása
     $total = getTotal($connection);
  
@@ -71,4 +71,24 @@ function homeController() {
             'lastPage' => $lastPage
         ]
     ];
+}
+/**
+ * singleImageController - Egy db kép megjelenítése
+ *
+ * @param [type] $params
+ * @return void
+ */
+function singleImageController($params){
+
+    $connection = getConnection();
+    $picture = getImageById($connection, $params['id']);
+
+    return [
+        'singleImage',
+        [
+            'title' => $picture['title'],
+            'picture' => $picture
+        ]
+    ];
+
 }

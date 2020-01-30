@@ -24,7 +24,7 @@
 
     <!-- Képek megjelenítése -->
     <?php foreach($content as $picture): ?>
-        <img src="<?=$picture['thumbnail'] ?>">
+        <a href="/iamges/<?=$picture['id']?>"><img src="<?=$picture['thumbnail'] ?>" alt="<?=$picture['title']?>" title="<?=$picture['title']?>"></a>
     <?php endforeach ?>
 
 
@@ -32,3 +32,5 @@
     <?php require "pagination.php"?>
 
 </main>
+
+
