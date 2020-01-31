@@ -1,5 +1,8 @@
 <?php
-$title ="Photo Gallery";
+
+$sitename ="Photo Gallery";
+
+
 
 /**
  * lehetséges oldalméret
