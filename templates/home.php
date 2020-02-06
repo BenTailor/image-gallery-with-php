@@ -31,6 +31,7 @@
     <!-- Lapozósáv -->
     <?php require "pagination.php"?>
 
+    
 </main>
 
 

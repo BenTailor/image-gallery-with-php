@@ -92,3 +92,26 @@ function singleImageController($params){
     ];
 
 }
+
+/**
+ * Egy kép szerkesztése
+ *
+ * @return void
+ */
+function singleImageEditController() {
+    return [
+        "redirect:/",
+        []
+    ];
+}
+/**
+ * Egy kép törlése
+ *
+ * @return void
+ */
+function singleImageDeleteController() {
+    return [
+        "redirect:/",
+        []
+    ];
+} 

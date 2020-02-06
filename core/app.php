@@ -14,10 +14,16 @@ $uri = $_SERVER["REQUEST_URI"] ?? '/';
 $cleaned = explode("?", $uri)[0];
 //dispatch() függvény megívása, ami kiválasztja az adott útvonalhoz tartozó controllert
 
-
 list($view, $data) = dispatch($cleaned, 'notFoundController' );
 extract($data);
 
+if (preg_match("%^redirect:\:(?<route>.*)$%", $view, $matches)) {
+    $redirectTarget = $matches['route'];
+    header('Location:'.$redirectTarget);
+    die();
+}
+
+extract($data);
 
 /**
  * Lapméret
