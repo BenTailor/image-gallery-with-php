@@ -99,8 +99,14 @@ function singleImageController($params){
  * @return void
  */
 function singleImageEditController() {
+    $connection = getConnection();
+    $id = $params['id'];
+    $title = $_POST['title'];
+
+
+
     return [
-        "redirect:/",
+        "redirect:/image/$id",
         []
     ];
 }
